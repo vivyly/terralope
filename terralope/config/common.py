@@ -112,7 +112,16 @@ class Common(Configuration):
 
     # DATABASE CONFIGURATION
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
-    DATABASES = values.DatabaseURLValue('postgres://localhost/terralope')
+    #DATABASES = values.DatabaseURLValue('postgres://localhost/terralope')
+    DATABASES = {
+        'default': {
+            'ENGINE':'django.db.backends.postgresql_psycopg2',
+            'NAME':'terralope_db',
+            'USER': os.environ.get('TERRALOPE_DB_USER',''),
+            'PASSWORD': os.environ.get('TERRALOPE_DB_PASSWORD', ''),
+            'HOST':'localhost',
+        }
+    }
     # END DATABASE CONFIGURATION
 
     # CACHING
