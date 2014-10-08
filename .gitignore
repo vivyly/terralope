@@ -30,3 +30,9 @@ node_modules/
 
 # Campass
 .sass-cache
+
+#Libraries
+postgis-2.0.3.tar.gz
+postgis-2.0.3/
+geos-3.3.8.tar.bz2
+geos-3.3.8/
